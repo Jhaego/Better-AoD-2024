@@ -25,7 +25,7 @@ import Info from "./layouts/info"
 import Log from "./layouts/log"
 import Calculator from "./layouts/calculator"
 
-// Changes made on 5 Nov 2024 with thanks to Jhaego / Frakkefyr
+// Changes made on 5 Nov 2024 with thanks to Jhaego
 
 // Stable version
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
