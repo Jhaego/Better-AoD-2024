@@ -36179,30 +36179,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   updatePoolVolume: () => (/* binding */ updatePoolVolume),
 /* harmony export */   updateSmokeVolume: () => (/* binding */ updateSmokeVolume)
 /* harmony export */ });
-const newKill = new Audio("../resources/NewKill.mp3");
+const newKill = new Audio("../public/resources/NewKill.mp3");
 const updateNewKillVolume = (volume) => {
     newKill.volume = volume;
 };
-const north = new Audio("../resources/North.mp3");
-const east = new Audio("../resources/East.mp3");
+const north = new Audio("../public/resources/North.mp3");
+const east = new Audio("../public/resources/East.mp3");
 const updateSmokeVolume = (volume) => {
     north.volume = volume;
     east.volume = volume;
 };
-const pool = new Audio("../resources/Pool.mp3");
-const poolPop = new Audio("../resources/PoolPopping.mp3");
+const pool = new Audio("../public/resources/Pool.mp3");
+const poolPop = new Audio("../public/resources/PoolPopping.mp3");
 const updatePoolVolume = (volume) => {
     pool.volume = volume;
     poolPop.volume = volume;
 };
-const bomb = new Audio("../resources/Bomb.mp3");
+const bomb = new Audio("../public/resources/Bomb.mp3");
 const updateBombVolume = (volume) => {
     bomb.volume = volume;
 };
-const umbra = new Audio("../resources/Umbra.mp3");
-const glacies = new Audio("../resources/Glacies.mp3");
-const curor = new Audio("../resources/Curor.mp3");
-const fumus = new Audio("../resources/Fumus.mp3");
+const umbra = new Audio("../public/resources/Umbra.mp3");
+const glacies = new Audio("../public/resources/Glacies.mp3");
+const curor = new Audio("../public/resources/Curor.mp3");
+const fumus = new Audio("../public/resources/Fumus.mp3");
 const updateOrderVolume = (volume) => {
     umbra.volume = volume;
     glacies.volume = volume;
