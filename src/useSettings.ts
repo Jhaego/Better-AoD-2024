@@ -18,7 +18,7 @@ type Settings = Record<MessageTypes, MessageConfig> & {
 }
 
 const defaultSettings: Settings = {
-    displayType: "Letters",
+    displayType: "Numbers",
     newKillMessage: { text: true, volume: 0 },
     smokeMessage: { text: true, volume: 0 },
     poolMessage: { text: true, volume: 0 },
