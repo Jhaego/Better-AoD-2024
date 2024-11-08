@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import ReactDOM from "react-dom"
-import { mixColor } from "alt1/dist/base"
-import ChatBoxReader from "alt1/dist/chatbox"
+import { mixColor } from "alt1/base"
+import ChatBoxReader from "alt1/chatbox"
 import { displayDetectionMessage, alt1 } from "./helpers"
 import {
     detectBomb,

@@ -1,4 +1,4 @@
-import { mixColor } from "alt1/dist/base"
+import { mixColor } from "alt1/base"
 import { minion, minionList } from "./data"
 
 export const alt1 = window.alt1

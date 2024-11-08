@@ -3,7 +3,7 @@
     "jsx": "react",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "ESNext",
     "lib": [
       "es2021",
       "DOM"
@@ -11,12 +11,12 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "target": "es6",
+    "target": "ES2022",
     "noImplicitAny": false,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "moduleResolution": "node",
-    "outDir": "dist",
+    "moduleResolution": "bundler",
+    "outDir": "public",
     "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
@@ -24,9 +24,9 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": false,
   },
   "include": [
     "src/**/*"
-  ]
+  ],
 }
