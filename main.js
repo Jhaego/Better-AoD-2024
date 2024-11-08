@@ -36952,7 +36952,7 @@ const messages = {
     bombMessage: "Bomb warning"
 };
 const defaultSettings = {
-    displayType: "Letters",
+    displayType: "Numbers",
     newKillMessage: { text: true, volume: 0 },
     smokeMessage: { text: true, volume: 0 },
     poolMessage: { text: true, volume: 0 },
