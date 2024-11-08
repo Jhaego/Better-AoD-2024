@@ -41062,7 +41062,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Changes made on 5 Nov 2024 with thanks to Jhaego / Frakkefyr
+// Changes made on 5 Nov 2024 with thanks to Jhaego
 // Stable version
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
@@ -41093,7 +41093,7 @@ const createNewReader = () => {
 };
 const secondsForPoolToPop = 22;
 const poolReminderSeconds = [3, 2, 1];
-(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AOD starting", 5000);
+(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AoD starting", 5000);
 function App() {
     const [infoWindow, setInfoWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const showInfo = () => {
