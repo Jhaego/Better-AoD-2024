@@ -36357,7 +36357,7 @@ const Calculator = () => {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", { style: { fontFamily: "sans-serif", marginBottom: 0 } }, "Split system"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", { value: splitType, onChange: (event) => setSplitType(event.target.value) },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "7-10" }, "7-10"),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "7-10 trials & mock trials" }, "7-10 trial & mock trial"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "7-10 trial" }, "7-10 trial & mock trial"),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", { value: "FC" }, "FC")),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", { style: { fontFamily: "sans-serif", marginBottom: 0 } }, "Players"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", { style: { display: "flex", alignItems: "center", fontFamily: "sans-serif" } },

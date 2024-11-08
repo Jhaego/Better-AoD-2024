@@ -66,9 +66,9 @@ const Calculator: React.FC<{}> = () => {
             </label>
 
             <h4 style={{ fontFamily: "sans-serif", marginBottom: 0 }}>Split system</h4>
-            <select value={splitType} onChange={(event) => setSplitType(event.target.value)}>
+            <select value={splitType} onChange={(event) => setSplitType(event.target.value as "7-10" | "7-10 trial" | "FC")}>
                 <option value="7-10">7-10</option>
-                <option value="7-10 trials & mock trials">7-10 trial & mock trial</option>
+                <option value="7-10 trial">7-10 trial & mock trial</option>
                 <option value="FC">FC</option>
             </select>
 
