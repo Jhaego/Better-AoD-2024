@@ -63,7 +63,7 @@ const createNewReader = () => {
 const secondsForPoolToPop = 22
 const poolReminderSeconds = [3, 2, 1]
 
-displayDetectionMessage("Better AOD starting", 5000)
+displayDetectionMessage("Better AoD starting", 5000)
 
 function App() {
     const [infoWindow, setInfoWindow] = useState<Window | null>(null)
