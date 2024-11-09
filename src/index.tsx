@@ -357,8 +357,8 @@ function App() {
             <img
                 src="./resources/settings.svg"
                 alt="settings"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -370,8 +370,8 @@ function App() {
             <img
                 src="./resources/help.svg"
                 alt="settings"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,
@@ -383,8 +383,8 @@ function App() {
             <img
                 src="./resources/list.svg"
                 alt="kill log"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -396,8 +396,8 @@ function App() {
             <img
                 src="./resources/calculator.svg"
                 alt="calculator"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,
