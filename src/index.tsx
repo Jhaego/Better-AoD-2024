@@ -410,7 +410,7 @@ function App() {
                 style={{
                     position: "absolute",
                     bottom: 0,
-                    fontSize: 10,
+                    fontSize: 9,
                     color: "#D0D0D0",
                     textAlign: "center"
                 }}

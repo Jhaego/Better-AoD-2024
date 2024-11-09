@@ -41333,7 +41333,7 @@ function App() {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {
                 position: "absolute",
                 bottom: 0,
-                fontSize: 10,
+                fontSize: 9,
                 color: "#D0D0D0",
                 textAlign: "center"
             } }, randomPhrase),
