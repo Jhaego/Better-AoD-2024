@@ -41064,16 +41064,20 @@ __webpack_require__.r(__webpack_exports__);
 
 const phrases = [
     'passive be the berries kids',
+    'full send or no send, my dudes',
+    'big yikes but bigger vibes',
+    'oof is temporary, memes are forever',
+    'rise, yeet, meme, repeat',
+    'meme now cringe later eat a tater',
     'dont let your memes be dreams'
 ];
 const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-// Changes made on 5 Nov 2024 with thanks to Jhaego
-// Stable version
+// Original Better AoD by Jamie
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
-// Dev version
-// alt1://addapp/https://5tjf8.csb.app/appconfig.json
-// https://5tjf8.csb.app/
+// This fork of Better AoD by Jhaego
+// alt1://addapp/https://jhaego.github.io/Better-AoD-2024/public/appconfig.json
+// https://github.com/Jhaego/Better-AoD-2024
 const createNewReader = () => {
     const reader = new (alt1_chatbox__WEBPACK_IMPORTED_MODULE_14___default())();
     reader.readargs = {
