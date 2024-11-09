@@ -13,8 +13,10 @@ If you do not already have Alt1 Toolkit installed you can [download it from rune
 
 ## Troubleshooting
 
-Having issues detecting things?
+*Having issues detecting things?*
+
 This app requires you to have gamechat in either the "on" or "filtered" settings and the chatbox to be scrolled completely to the bottom. The app also reads each line separately so issues may occur if your chat box is so small that certain messages that are scanned for split on multiple lines, i.e. try making your chatbox wider. Please ensure your font size is 12 or larger (14 is best) as font 10 has significant detection issues.
 
-Double reading things?
+*Double reading things?*
+
 This can happen for several reasons around messages in the chatbox being obscured. This can be caused by: scrolling up, changing chat window, loading screens (when you teleport to Nex bank) or the floating monster HP bar covering the chat box.
