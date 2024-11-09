@@ -25,6 +25,13 @@ import Info from "./layouts/info"
 import Log from "./layouts/log"
 import Calculator from "./layouts/calculator"
 
+const phrases = [
+    'passive be the berries kids',
+    'dont let your memes be dreams'
+  ];
+  
+  const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+
 // Changes made on 5 Nov 2024 with thanks to Jhaego
 
 // Stable version
@@ -404,7 +411,7 @@ function App() {
                     textAlign: "center"
                 }}
             >
-                passive be the berries kids
+                  {randomPhrase}
             </span>
 
             {settings.displayType === "Numbers" ? (
@@ -424,20 +431,3 @@ const notFound = (
 
 const rootElement = document.getElementById("root")
 ReactDOM.render(alt1 ? <App /> : notFound, rootElement)
-
-const clearPopupInterval = setInterval(() => {
-    // Removes the "Open with sandbox button" as it won't scale
-    // Super hate this but no other good options and this is already public
-    // https://github.com/codesandbox/codesandbox-client/issues/3912
-    document.body.querySelectorAll("iframe").forEach((iframe) => {
-        if (iframe.id.startsWith("sb__open-sandbox")) {
-            const node = document.createElement("div")
-            node.style.setProperty("display", "none", "important")
-            node.id = iframe.id
-            document.getElementById(iframe.id)?.remove()
-            document.body.appendChild(node)
-
-            clearInterval(clearPopupInterval)
-        }
-    })
-}, 250)
