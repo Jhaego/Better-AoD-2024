@@ -6,6 +6,7 @@ No meaningful changes from the original has been done as of yet.
 
 ## Installation
 
-To install this plugin, you can click on [this link](alt1://addapp/https://jhaego.github.io/Better-AoD-2024/public/appconfig.json).
+To install this plugin copy & paste this link into your browser:
+`alt1://addapp/https://jhaego.github.io/Better-AoD-2024/public/appconfig.json`
 
 If you do not already have Alt1 Toolkit installed you can [download it from runeapps.org](https://runeapps.org/alt1).
