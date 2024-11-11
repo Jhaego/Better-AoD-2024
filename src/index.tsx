@@ -143,17 +143,15 @@ function App() {
     }
 
     useEffect(() => {
-        const [bombDetected, setBombDetected] = useState(false);
-    
         const tick = () => {
             try {
-                let chatLines = readerRef.current.read();
-    
+                let chatLines = readerRef.current.read()
+
                 if (chatLines === null) {
-                    console.log("attempting find");
-    
-                    const findResult = readerRef.current.find();
-    
+                    console.log("attempting find")
+
+                    const findResult = readerRef.current.find()
+
                     if (readerRef.current.pos) {
                         alt1.overLayRect(
                             mixColor(45, 186, 21),
@@ -163,163 +161,157 @@ function App() {
                             readerRef.current.pos.mainbox.rect.height,
                             1000,
                             1
-                        );
+                        )
                     }
-    
+
                     if (findResult === null) {
                         displayDetectionMessage(
                             "Can't detect chatbox\nPlease press enter so chatbox is highlighted for detection",
                             600,
                             30
-                        );
-    
-                        return;
+                        )
+
+                        return
                     }
-    
-                    chatLines = readerRef.current.read() || [];
+
+                    chatLines = readerRef.current.read() || []
                 }
-    
+
                 chatLines.forEach((line) => {
-                    console.log(line);
-    
+                    console.log(line)
+
                     // Gem start message
                     if (detectGemStart(line.text)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "GemStart",
                             message: line.text
-                        });
+                        })
                     }
-    
+
                     // Gem end message
                     if (detectGemEnd(line.text)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "GemEnd",
                             message: line.text
-                        });
+                        })
                     }
-    
+
                     // Kill end message
-                    const result = detectKillEnd(line.text);
+                    const result = detectKillEnd(line.text)
                     if (result !== false) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "KillFinish",
                             message: line.text
-                        });
+                        })
                     }
-    
+
                     // Player death message
                     if (detectPlayerDeath(line.text)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "PlayerDeath",
                             message: line.text
-                        });
+                        })
                     }
-    
+
                     // Start of kill
                     if (detectKillStart(line.text)) {
-                        dispatch({ type: "clear" });
-    
+                        dispatch({ type: "clear" })
+
                         if (settings.newKillMessage.text) {
-                            displayDetectionMessage("New kill", 5000);
+                            displayDetectionMessage("New kill", 5000)
                         }
-    
+
                         if (settings.newKillMessage.volume > 0) {
-                            newKill.play();
+                            newKill.play()
                         }
                     }
-    
+
                     // Smoke
-                    const directionalSmoke = detectDirectionalSmoke(line.text);
+                    const directionalSmoke = detectDirectionalSmoke(line.text)
                     if (directionalSmoke) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Smoke",
                             message: line.text
-                        });
-    
+                        })
+
                         if (settings.smokeMessage.text) {
-                            displayDetectionMessage(directionalSmoke, 5000);
+                            displayDetectionMessage(directionalSmoke, 5000)
                         }
-    
+
                         if (settings.smokeMessage.volume > 0) {
                             if (directionalSmoke === "North") {
-                                north.play();
+                                north.play()
                             } else if (directionalSmoke === "East") {
-                                east.play();
+                                east.play()
                             }
                         }
                     }
-    
+
                     // Pool
                     if (detectPool(line.text)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Pool",
                             message: line.text
-                        });
-    
+                        })
+
                         if (settings.poolMessage.text) {
-                            displayDetectionMessage("Pool", 5000);
-    
+                            displayDetectionMessage("Pool", 5000)
+
                             poolReminderSeconds.forEach((secondsUntill) => {
                                 setTimeout(() => {
-                                    displayDetectionMessage(`Pool popping ...${secondsUntill}`, 1000);
-                                }, (secondsForPoolToPop - secondsUntill) * 1000);
-                            });
+                                    displayDetectionMessage(`Pool popping ...${secondsUntill}`, 1000)
+                                }, (secondsForPoolToPop - secondsUntill) * 1000)
+                            })
                         }
-    
+
                         if (settings.poolMessage.volume > 0) {
-                            pool.play();
-    
+                            pool.play()
+
                             setTimeout(() => {
-                                poolPop.play();
-                            }, (secondsForPoolToPop - 4) * 1000);
+                                poolPop.play()
+                            }, (secondsForPoolToPop - 4) * 1000)
                         }
                     }
-    
+
                     // Bomb
-                    if (detectBomb(line.text) && !bombDetected) {
+                    if (detectBomb(line.text)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Bomb",
                             message: line.text
-                        });
-    
+                        })
+
                         if (settings.bombMessage.text) {
-                            displayDetectionMessage("Bomb", 5000);
+                            displayDetectionMessage("Bomb", 5000)
                         }
-    
+
                         if (settings.bombMessage.volume > 0) {
-                            bomb.play();
+                            bomb.play()
                         }
-    
-                        // Set bombDetected to true and start a X-second cooldown timer
-                        setBombDetected(true);
-                        setTimeout(() => {
-                            setBombDetected(false);
-                        }, 15000); // 15 seconds
                     }
-    
+
                     // Minions dying
-                    const minion = detectMinionDeath(line.text);
+                    const minion = detectMinionDeath(line.text)
                     if (minion) {
-                        dispatch({ type: "addMinion", minion });
+                        dispatch({ type: "addMinion", minion })
                     }
-                });
+                })
             } catch (error) {
-                console.log(error);
-                displayDetectionMessage("An error has occurred", 600);
+                console.log(error)
+                displayDetectionMessage("An error has occured", 600)
             }
-        };
-    
-        const tickInterval = setInterval(tick, 600);
-    
-        return () => clearInterval(tickInterval);
-    }, [settings, dispatch, dispatchLog]);
+        }
+
+        const tickInterval = setInterval(tick, 600)
+
+        return () => clearInterval(tickInterval)
+    }, [settings, dispatch, dispatchLog])
 
     useEffect(() => {
         if (infoWindow !== null) {
