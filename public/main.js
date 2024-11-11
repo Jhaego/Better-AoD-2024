@@ -41155,6 +41155,7 @@ function App() {
         setElementSize(Math.min(window.innerWidth, window.innerHeight));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const [bombDetected, setBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
         const tick = () => {
             try {
                 let chatLines = readerRef.current.read();
@@ -41258,7 +41259,7 @@ function App() {
                         }
                     }
                     // Bomb
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text)) {
+                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text) && !bombDetected) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Bomb",
@@ -41270,6 +41271,11 @@ function App() {
                         if (settings.bombMessage.volume > 0) {
                             _audio__WEBPACK_IMPORTED_MODULE_4__.bomb.play();
                         }
+                        // Set bombDetected to true and start a X-seconds cooldown timer
+                        setBombDetected(true);
+                        setTimeout(() => {
+                            setBombDetected(false);
+                        }, 15000); // 10 seconds
                     }
                     // Minions dying
                     const minion = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectMinionDeath)(line.text);
@@ -41280,7 +41286,7 @@ function App() {
             }
             catch (error) {
                 console.log(error);
-                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occured", 600);
+                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occurred", 600);
             }
         };
         const tickInterval = setInterval(tick, 600);
