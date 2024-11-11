@@ -41155,6 +41155,7 @@ function App() {
         setElementSize(Math.min(window.innerWidth, window.innerHeight));
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const [bombDetected, setBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
         const tick = () => {
             try {
                 let chatLines = readerRef.current.read();
@@ -41258,7 +41259,7 @@ function App() {
                         }
                     }
                     // Bomb
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text)) {
+                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text) && !bombDetected) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Bomb",
@@ -41270,6 +41271,11 @@ function App() {
                         if (settings.bombMessage.volume > 0) {
                             _audio__WEBPACK_IMPORTED_MODULE_4__.bomb.play();
                         }
+                        // Set bombDetected to true and start a X-second cooldown timer
+                        setBombDetected(true);
+                        setTimeout(() => {
+                            setBombDetected(false);
+                        }, 15000); // 15 seconds
                     }
                     // Minions dying
                     const minion = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectMinionDeath)(line.text);
@@ -41280,7 +41286,7 @@ function App() {
             }
             catch (error) {
                 console.log(error);
-                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occured", 600);
+                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occurred", 600);
             }
         };
         const tickInterval = setInterval(tick, 600);
@@ -41310,22 +41316,22 @@ function App() {
             backgroundColor: "#04121b",
             backgroundImage: "url(./background.png)"
         } },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 top: elementSize / 32
             }, onClick: showSettings }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 top: (elementSize / 32) * 2
             }, onClick: showInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 bottom: elementSize / 32
             }, onClick: showLog }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 bottom: elementSize / 32
