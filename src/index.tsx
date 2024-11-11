@@ -36,9 +36,6 @@ const phrases = [
   ];
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
-
-const [lastBombDetected, setLastBombDetected] = useState<number | null>(null);
-
 // Original Better AoD by Jamie
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
@@ -78,6 +75,9 @@ const poolReminderSeconds = [3, 2, 1]
 displayDetectionMessage("Better AoD starting", 5000)
 
 function App() {
+
+    const [lastBombDetected, setLastBombDetected] = useState<number | null>(null);
+
     const [infoWindow, setInfoWindow] = useState<Window | null>(null)
     const showInfo = () => {
         const newWindow = window.open("", "Info", "width=350,height=500")

@@ -42030,7 +42030,6 @@ const phrases = [
     'dont let your memes be dreams'
 ];
 const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-const [lastBombDetected, setLastBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
 // Original Better AoD by Jamie
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
@@ -42063,6 +42062,7 @@ const secondsForPoolToPop = 22;
 const poolReminderSeconds = [3, 2, 1];
 (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AoD starting", 5000);
 function App() {
+    const [lastBombDetected, setLastBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [infoWindow, setInfoWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const showInfo = () => {
         const newWindow = window.open("", "Info", "width=350,height=500");
