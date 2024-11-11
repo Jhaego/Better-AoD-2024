@@ -42030,6 +42030,7 @@ const phrases = [
     'dont let your memes be dreams'
 ];
 const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+const [lastBombDetected, setLastBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
 // Original Better AoD by Jamie
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
@@ -42216,7 +42217,7 @@ function App() {
                         }
                     }
                     // Bomb
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text)) {
+                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text) && (!lastBombDetected || Date.now() - lastBombDetected > 15000)) {
                         dispatchLog({
                             type: "logEvent",
                             eventType: "Bomb",
@@ -42228,6 +42229,7 @@ function App() {
                         if (settings.bombMessage.volume > 0) {
                             _audio__WEBPACK_IMPORTED_MODULE_4__.bomb.play();
                         }
+                        setLastBombDetected(Date.now());
                     }
                     // Minions dying
                     const minion = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectMinionDeath)(line.text);

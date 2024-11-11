@@ -34,9 +34,10 @@ const phrases = [
     'meme now cringe later eat a tater',
     'dont let your memes be dreams'
   ];
-  
   const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
+
+const [lastBombDetected, setLastBombDetected] = useState<number | null>(null);
 
 // Original Better AoD by Jamie
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
@@ -279,22 +280,24 @@ function App() {
                         }
                     }
 
-                    // Bomb
-                    if (detectBomb(line.text)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "Bomb",
-                            message: line.text
-                        })
+// Bomb
+if (detectBomb(line.text) && (!lastBombDetected || Date.now() - lastBombDetected > 15000)) {
+    dispatchLog({
+        type: "logEvent",
+        eventType: "Bomb",
+        message: line.text
+    });
 
-                        if (settings.bombMessage.text) {
-                            displayDetectionMessage("Bomb", 5000)
-                        }
+    if (settings.bombMessage.text) {
+        displayDetectionMessage("Bomb", 5000);
+    }
 
-                        if (settings.bombMessage.volume > 0) {
-                            bomb.play()
-                        }
-                    }
+    if (settings.bombMessage.volume > 0) {
+        bomb.play();
+    }
+
+    setLastBombDetected(Date.now());
+}
 
                     // Minions dying
                     const minion = detectMinionDeath(line.text)
