@@ -25,7 +25,7 @@ import Info from "./layouts/info"
 import Log from "./layouts/log"
 import Calculator from "./layouts/calculator"
 
-// The original Better AoD
+// Original Better AoD
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
 
@@ -42,7 +42,7 @@ const phrases = [
     'meme now cringe later eat a tater',
     'dont let your memes be dreams'
   ];
-  const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 
 const createNewReader = () => {
     const reader = new ChatBoxReader()
@@ -50,7 +50,6 @@ const createNewReader = () => {
     reader.readargs = {
         colors: [
             mixColor(255, 160, 0), // Orange practice mode
-            mixColor(45, 186, 21), // Completion time green
             mixColor(45, 186, 20), // Completion time green
             mixColor(159, 255, 159), // Clan chat green
             mixColor(255, 82, 86), // PM red
@@ -72,7 +71,7 @@ const createNewReader = () => {
 const secondsForPoolToPop = 22
 const poolReminderSeconds = [3, 2, 1]
 
-displayDetectionMessage("Better AOD starting", 5000)
+displayDetectionMessage("Better AoD starting", 5000)
 
 function App() {
     const [infoWindow, setInfoWindow] = useState<Window | null>(null)
@@ -355,8 +354,8 @@ function App() {
             <img
                 src="./resources/settings.svg"
                 alt="settings"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -368,8 +367,8 @@ function App() {
             <img
                 src="./resources/help.svg"
                 alt="settings"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,
@@ -381,8 +380,8 @@ function App() {
             <img
                 src="./resources/list.svg"
                 alt="kill log"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -394,8 +393,8 @@ function App() {
             <img
                 src="./resources/calculator.svg"
                 alt="calculator"
-                height={elementSize / 6}
-                width={elementSize / 6}
+                height={elementSize / 5}
+                width={elementSize / 5}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,
@@ -408,12 +407,12 @@ function App() {
                 style={{
                     position: "absolute",
                     bottom: 0,
-                    fontSize: 10,
+                    fontSize: 9,
                     color: "#D0D0D0",
                     textAlign: "center"
                 }}
             >
-                passive be the berries kids
+                  {randomPhrase}
             </span>
 
             {settings.displayType === "Numbers" ? (

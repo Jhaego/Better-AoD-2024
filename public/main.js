@@ -42020,7 +42020,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// The original Better AoD
+// Original Better AoD
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
 // This fork of Better AoD
@@ -42041,7 +42041,6 @@ const createNewReader = () => {
     reader.readargs = {
         colors: [
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Orange practice mode
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 21), // Completion time green
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 20), // Completion time green
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(159, 255, 159), // Clan chat green
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 82, 86), // PM red
@@ -42060,7 +42059,7 @@ const createNewReader = () => {
 };
 const secondsForPoolToPop = 22;
 const poolReminderSeconds = [3, 2, 1];
-(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AOD starting", 5000);
+(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AoD starting", 5000);
 function App() {
     const [infoWindow, setInfoWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const showInfo = () => {
@@ -42268,22 +42267,22 @@ function App() {
             backgroundColor: "#04121b",
             backgroundImage: "url(./background.png)"
         } },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 top: elementSize / 32
             }, onClick: showSettings }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 top: (elementSize / 32) * 2
             }, onClick: showInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 bottom: elementSize / 32
             }, onClick: showLog }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 6, width: elementSize / 6, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 5, width: elementSize / 5, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 bottom: elementSize / 32
@@ -42291,10 +42290,10 @@ function App() {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {
                 position: "absolute",
                 bottom: 0,
-                fontSize: 10,
+                fontSize: 9,
                 color: "#D0D0D0",
                 textAlign: "center"
-            } }, "passive be the berries kids"),
+            } }, randomPhrase),
         settings.displayType === "Numbers" ? (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_numbersDisplay__WEBPACK_IMPORTED_MODULE_9__["default"], { windowSize: windowSize, state: state })) : (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_lettersDisplay__WEBPACK_IMPORTED_MODULE_8__["default"], { windowSize: windowSize, state: state }))));
 }
 const notFound = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "App" },
