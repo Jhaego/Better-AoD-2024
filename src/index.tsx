@@ -51,16 +51,13 @@ const createNewReader = () => {
         colors: [
             mixColor(255, 160, 0), // Orange practice mode
             mixColor(45, 186, 20), // Completion time green
-            mixColor(159, 255, 159), // Clan chat green
-            mixColor(255, 82, 86), // PM red
-            mixColor(225, 35, 35), // Nex P3 spec text
             mixColor(235, 47, 47), // Nex P3 spec text NEW 16/7/24
             mixColor(153, 255, 153), // "Nex:" green
             mixColor(155, 48, 255), // "Nex:" purple
-            mixColor(255, 0, 255), //
-            mixColor(0, 255, 255), //
-            mixColor(255, 0, 0), // Red
-            mixColor(255, 255, 255), // White
+            mixColor(255, 0, 255), // Umbra purple 
+            mixColor(0, 255, 255), // Glacies blue 
+            mixColor(255, 0, 0), // Cruor red
+            mixColor(255, 255, 255), // Fumus white
             mixColor(127, 169, 255) // Clock blue
         ]
     }
@@ -354,8 +351,8 @@ function App() {
             <img
                 src="./resources/settings.svg"
                 alt="settings"
-                height={elementSize / 5}
-                width={elementSize / 5}
+                height={elementSize / 8}
+                width={elementSize / 8}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -367,8 +364,8 @@ function App() {
             <img
                 src="./resources/help.svg"
                 alt="settings"
-                height={elementSize / 5}
-                width={elementSize / 5}
+                height={elementSize / 8}
+                width={elementSize / 8}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,
@@ -380,8 +377,8 @@ function App() {
             <img
                 src="./resources/list.svg"
                 alt="kill log"
-                height={elementSize / 5}
-                width={elementSize / 5}
+                height={elementSize / 8}
+                width={elementSize / 8}
                 style={{
                     position: "absolute",
                     left: elementSize / 32,
@@ -393,8 +390,8 @@ function App() {
             <img
                 src="./resources/calculator.svg"
                 alt="calculator"
-                height={elementSize / 5}
-                width={elementSize / 5}
+                height={elementSize / 8}
+                width={elementSize / 8}
                 style={{
                     position: "absolute",
                     right: elementSize / 32,

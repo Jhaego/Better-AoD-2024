@@ -42042,16 +42042,13 @@ const createNewReader = () => {
         colors: [
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Orange practice mode
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 20), // Completion time green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(159, 255, 159), // Clan chat green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 82, 86), // PM red
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(225, 35, 35), // Nex P3 spec text
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47), // Nex P3 spec text NEW 16/7/24
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153), // "Nex:" green
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(155, 48, 255), // "Nex:" purple
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255), //
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255), //
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 0), // Red
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255), // White
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255), // Umbra purple 
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255), // Glacies blue 
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 0), // Cruor red
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255), // Fumus white
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255) // Clock blue
         ]
     };
@@ -42267,22 +42264,22 @@ function App() {
             backgroundColor: "#04121b",
             backgroundImage: "url(./background.png)"
         } },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 8, width: elementSize / 8, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 top: elementSize / 32
             }, onClick: showSettings }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 5, width: elementSize / 5, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 8, width: elementSize / 8, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 top: (elementSize / 32) * 2
             }, onClick: showInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 5, width: elementSize / 5, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 8, width: elementSize / 8, style: {
                 position: "absolute",
                 left: elementSize / 32,
                 bottom: elementSize / 32
             }, onClick: showLog }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 5, width: elementSize / 5, style: {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 8, width: elementSize / 8, style: {
                 position: "absolute",
                 right: elementSize / 32,
                 bottom: elementSize / 32
