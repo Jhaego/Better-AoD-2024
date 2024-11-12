@@ -41985,6 +41985,9 @@ var __webpack_exports__ = {};
   !*** ./index.tsx ***!
   \*******************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "../node_modules/react-dom/index.js");
@@ -42030,236 +42033,158 @@ const phrases = [
     'dont let your memes be dreams'
 ];
 const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-// Original Better AoD by Jamie
-// alt1://addapp/https://cgyi4.csb.app/appconfig.json
-// https://cgyi4.csb.app/
-// This fork of Better AoD by Jhaego
-// alt1://addapp/https://jhaego.github.io/Better-AoD-2024/public/appconfig.json
-// https://github.com/Jhaego/Better-AoD-2024
 const createNewReader = () => {
     const reader = new (alt1_chatbox__WEBPACK_IMPORTED_MODULE_14___default())();
     reader.readargs = {
         colors: [
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Orange practice mode
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 21), // Completion time green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 184, 20), // Completion time green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(159, 255, 159), // Clan chat green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 82, 86), // PM red
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(225, 35, 35), // Nex P3 spec text
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47), // Nex P3 spec text NEW 16/7/24
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153), // "Nex:" green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(155, 48, 255), // "Nex:" purple
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255), //
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255), //
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 0), // Red
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255), // White
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255) // Clock blue
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 21),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 20),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(159, 255, 159),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 82, 86),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(225, 35, 35),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(155, 48, 255),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 0),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255),
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255)
         ]
     };
     return reader;
 };
+const createWindow = (name, width = 350, height = 500) => {
+    const newWindow = window.open("", name, `width=${width},height=${height}`);
+    if (newWindow && newWindow.document.getElementById("root") === null) {
+        newWindow.document.write(`<div id="root" style="height: 100%; width: 100%"></div>`);
+    }
+    return newWindow;
+};
 const secondsForPoolToPop = 22;
 const poolReminderSeconds = [3, 2, 1];
-(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AoD starting", 5000);
+(0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Better AOD starting", 5000);
 function App() {
-    const [lastBombDetected, setLastBombDetected] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [infoWindow, setInfoWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const showInfo = () => {
-        const newWindow = window.open("", "Info", "width=350,height=500");
-        if (newWindow) {
-            if (newWindow.document.getElementById("root") === null) {
-                newWindow.document.write(`<div id="root" style="height: 100%; width: 100%;"></div>`);
-            }
-            setInfoWindow(newWindow);
-        }
-    };
     const [settingsWindow, setSettingsWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const showSettings = () => {
-        const newWindow = window.open("", "Settings", "width=350,height=500");
-        if (newWindow) {
-            if (newWindow.document.getElementById("root") === null) {
-                newWindow.document.write(`<div id="root" style="height: 100%; width: 100%;"></div>`);
-            }
-            setSettingsWindow(newWindow);
-        }
-    };
     const [logWindow, setLogWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const showLog = () => {
-        const newWindow = window.open("", "Log", "width=350,height=500");
-        if (newWindow) {
-            if (newWindow.document.getElementById("root") === null) {
-                newWindow.document.write(`<div id="root" style="height: 100%; width: 100%"></div>`);
-            }
-            setLogWindow(newWindow);
-        }
-    };
-    const [calculatorWindow, setcalculatorWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    const showcalculator = () => {
-        const newWindow = window.open("", "calculator", "width=350,height=500");
-        if (newWindow) {
-            if (newWindow.document.getElementById("root") === null) {
-                newWindow.document.write(`<div id="root" style="height: 100%; width: 100%"></div>`);
-            }
-            setcalculatorWindow(newWindow);
-        }
-    };
+    const [calculatorWindow, setCalculatorWindow] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const readerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(createNewReader());
     const [state, dispatch] = (0,_useMinionState__WEBPACK_IMPORTED_MODULE_5__["default"])();
     const [log, dispatchLog] = (0,_useEventLogState__WEBPACK_IMPORTED_MODULE_10__["default"])();
     const [settings, settingsDispatch] = (0,_useSettings__WEBPACK_IMPORTED_MODULE_6__["default"])();
     const [windowSize, setWindowSize] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({ height: window.innerHeight, width: window.innerWidth });
     const [elementSize, setElementSize] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(Math.min(window.innerWidth, window.innerHeight));
-    window.onresize = () => {
-        setWindowSize({ height: window.innerHeight, width: window.innerWidth });
-        setElementSize(Math.min(window.innerWidth, window.innerHeight));
+    const showInfo = () => setInfoWindow(createWindow("Info"));
+    const showSettings = () => setSettingsWindow(createWindow("Settings"));
+    const showLog = () => setLogWindow(createWindow("Log"));
+    const showCalculator = () => setCalculatorWindow(createWindow("Calculator"));
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const resizeHandler = () => {
+            setWindowSize({ height: window.innerHeight, width: window.innerWidth });
+            setElementSize(Math.min(window.innerWidth, window.innerHeight));
+        };
+        window.addEventListener("resize", resizeHandler);
+        return () => window.removeEventListener("resize", resizeHandler);
+    }, []);
+    const tick = () => {
+        try {
+            let chatLines = readerRef.current.read();
+            if (chatLines === null) {
+                console.log("attempting find");
+                const findResult = readerRef.current.find();
+                if (readerRef.current.pos) {
+                    _helpers__WEBPACK_IMPORTED_MODULE_2__.alt1.overLayRect((0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 21), readerRef.current.pos.mainbox.rect.x, readerRef.current.pos.mainbox.rect.y, readerRef.current.pos.mainbox.rect.width, readerRef.current.pos.mainbox.rect.height, 1000, 1);
+                }
+                if (findResult === null) {
+                    (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Can't detect chatbox\nPlease press enter so chatbox is highlighted for detection", 600, 30);
+                    return;
+                }
+                chatLines = readerRef.current.read() || [];
+            }
+            chatLines.forEach((line) => {
+                const handleEventDetection = (detectionFn, eventType) => {
+                    if (detectionFn(line.text)) {
+                        dispatchLog({ type: "logEvent", eventType, message: line.text });
+                    }
+                };
+                handleEventDetection(_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectGemStart, "GemStart");
+                handleEventDetection(_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectGemEnd, "GemEnd");
+                handleEventDetection(_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectKillEnd, "KillFinish");
+                handleEventDetection(_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectPlayerDeath, "PlayerDeath");
+                if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectKillStart)(line.text)) {
+                    dispatch({ type: "clear" });
+                    if (settings.newKillMessage.text) {
+                        (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("New kill", 5000);
+                    }
+                    if (settings.newKillMessage.volume > 0) {
+                        _audio__WEBPACK_IMPORTED_MODULE_4__.newKill.play();
+                    }
+                }
+                const directionalSmoke = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectDirectionalSmoke)(line.text);
+                if (directionalSmoke) {
+                    dispatchLog({ type: "logEvent", eventType: "Smoke", message: line.text });
+                    if (settings.smokeMessage.text) {
+                        (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)(directionalSmoke, 5000);
+                    }
+                    if (settings.smokeMessage.volume > 0) {
+                        if (directionalSmoke === "North")
+                            _audio__WEBPACK_IMPORTED_MODULE_4__.north.play();
+                        else if (directionalSmoke === "East")
+                            _audio__WEBPACK_IMPORTED_MODULE_4__.east.play();
+                    }
+                }
+                if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectPool)(line.text)) {
+                    dispatchLog({ type: "logEvent", eventType: "Pool", message: line.text });
+                    if (settings.poolMessage.text) {
+                        (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Pool", 5000);
+                        poolReminderSeconds.forEach((secondsUntill) => {
+                            setTimeout(() => {
+                                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)(`Pool popping ...${secondsUntill}`, 1000);
+                            }, (secondsForPoolToPop - secondsUntill) * 1000);
+                        });
+                    }
+                    if (settings.poolMessage.volume > 0) {
+                        _audio__WEBPACK_IMPORTED_MODULE_4__.pool.play();
+                        setTimeout(() => _audio__WEBPACK_IMPORTED_MODULE_4__.poolPop.play(), (secondsForPoolToPop - 4) * 1000);
+                    }
+                }
+                if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text)) {
+                    dispatchLog({ type: "logEvent", eventType: "Bomb", message: line.text });
+                    if (settings.bombMessage.text)
+                        (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Bomb", 5000);
+                    if (settings.bombMessage.volume > 0)
+                        _audio__WEBPACK_IMPORTED_MODULE_4__.bomb.play();
+                }
+                const minion = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectMinionDeath)(line.text);
+                if (minion) {
+                    dispatch({ type: "addMinion", minion });
+                }
+            });
+        }
+        catch (error) {
+            console.log(error);
+            (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occurred", 600);
+        }
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        const tick = () => {
-            try {
-                let chatLines = readerRef.current.read();
-                if (chatLines === null) {
-                    console.log("attempting find");
-                    const findResult = readerRef.current.find();
-                    if (readerRef.current.pos) {
-                        _helpers__WEBPACK_IMPORTED_MODULE_2__.alt1.overLayRect((0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 21), readerRef.current.pos.mainbox.rect.x, readerRef.current.pos.mainbox.rect.y, readerRef.current.pos.mainbox.rect.width, readerRef.current.pos.mainbox.rect.height, 1000, 1);
-                    }
-                    if (findResult === null) {
-                        (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Can't detect chatbox\nPlease press enter so chatbox is highlighted for detection", 600, 30);
-                        return;
-                    }
-                    chatLines = readerRef.current.read() || [];
-                }
-                chatLines.forEach((line) => {
-                    console.log(line);
-                    // Gem start message
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectGemStart)(line.text)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "GemStart",
-                            message: line.text
-                        });
-                    }
-                    // Gem end message
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectGemEnd)(line.text)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "GemEnd",
-                            message: line.text
-                        });
-                    }
-                    // Kill end message
-                    const result = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectKillEnd)(line.text);
-                    if (result !== false) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "KillFinish",
-                            message: line.text
-                        });
-                    }
-                    // Player death message
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectPlayerDeath)(line.text)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "PlayerDeath",
-                            message: line.text
-                        });
-                    }
-                    // Start of kill
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectKillStart)(line.text)) {
-                        dispatch({ type: "clear" });
-                        if (settings.newKillMessage.text) {
-                            (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("New kill", 5000);
-                        }
-                        if (settings.newKillMessage.volume > 0) {
-                            _audio__WEBPACK_IMPORTED_MODULE_4__.newKill.play();
-                        }
-                    }
-                    // Smoke
-                    const directionalSmoke = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectDirectionalSmoke)(line.text);
-                    if (directionalSmoke) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "Smoke",
-                            message: line.text
-                        });
-                        if (settings.smokeMessage.text) {
-                            (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)(directionalSmoke, 5000);
-                        }
-                        if (settings.smokeMessage.volume > 0) {
-                            if (directionalSmoke === "North") {
-                                _audio__WEBPACK_IMPORTED_MODULE_4__.north.play();
-                            }
-                            else if (directionalSmoke === "East") {
-                                _audio__WEBPACK_IMPORTED_MODULE_4__.east.play();
-                            }
-                        }
-                    }
-                    // Pool
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectPool)(line.text)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "Pool",
-                            message: line.text
-                        });
-                        if (settings.poolMessage.text) {
-                            (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Pool", 5000);
-                            poolReminderSeconds.forEach((secondsUntill) => {
-                                setTimeout(() => {
-                                    (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)(`Pool popping ...${secondsUntill}`, 1000);
-                                }, (secondsForPoolToPop - secondsUntill) * 1000);
-                            });
-                        }
-                        if (settings.poolMessage.volume > 0) {
-                            _audio__WEBPACK_IMPORTED_MODULE_4__.pool.play();
-                            setTimeout(() => {
-                                _audio__WEBPACK_IMPORTED_MODULE_4__.poolPop.play();
-                            }, (secondsForPoolToPop - 4) * 1000);
-                        }
-                    }
-                    // Bomb
-                    if ((0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectBomb)(line.text) && (!lastBombDetected || Date.now() - lastBombDetected > 15000)) {
-                        dispatchLog({
-                            type: "logEvent",
-                            eventType: "Bomb",
-                            message: line.text
-                        });
-                        if (settings.bombMessage.text) {
-                            (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("Bomb", 5000);
-                        }
-                        if (settings.bombMessage.volume > 0) {
-                            _audio__WEBPACK_IMPORTED_MODULE_4__.bomb.play();
-                        }
-                        setLastBombDetected(Date.now());
-                    }
-                    // Minions dying
-                    const minion = (0,_textDetection__WEBPACK_IMPORTED_MODULE_3__.detectMinionDeath)(line.text);
-                    if (minion) {
-                        dispatch({ type: "addMinion", minion });
-                    }
-                });
-            }
-            catch (error) {
-                console.log(error);
-                (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.displayDetectionMessage)("An error has occured", 600);
-            }
-        };
         const tickInterval = setInterval(tick, 600);
         return () => clearInterval(tickInterval);
     }, [settings, dispatch, dispatchLog]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        if (infoWindow !== null) {
+        if (infoWindow)
             react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_info__WEBPACK_IMPORTED_MODULE_11__["default"], null), infoWindow.document.getElementById("root"));
-        }
-        if (settingsWindow !== null) {
+        if (settingsWindow)
             react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_settingsForm__WEBPACK_IMPORTED_MODULE_7__["default"], { settings: settings, settingsDispatch: settingsDispatch }), settingsWindow.document.getElementById("root"));
-        }
-        if (logWindow !== null) {
+        if (logWindow)
             react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_log__WEBPACK_IMPORTED_MODULE_12__["default"], { log: log, clearLog: () => dispatchLog({ type: "clear" }), removeEvent: (index) => dispatchLog({ type: "removeEvent", index }) }), logWindow.document.getElementById("root"));
-        }
-        if (calculatorWindow !== null) {
+        if (calculatorWindow)
             react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_calculator__WEBPACK_IMPORTED_MODULE_13__["default"], null), calculatorWindow.document.getElementById("root"));
-        }
     });
+    const renderDisplay = () => {
+        return settings.displayType === "Numbers" ? (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_numbersDisplay__WEBPACK_IMPORTED_MODULE_9__["default"], { windowSize: windowSize, state: state })) : (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_lettersDisplay__WEBPACK_IMPORTED_MODULE_8__["default"], { windowSize: windowSize, state: state }));
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { style: {
             display: "flex",
             flexDirection: "column",
@@ -42270,39 +42195,17 @@ function App() {
             backgroundColor: "#04121b",
             backgroundImage: "url(./background.png)"
         } },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/settings.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
-                position: "absolute",
-                left: elementSize / 32,
-                top: elementSize / 32
-            }, onClick: showSettings }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/help.svg", alt: "settings", height: elementSize / 6, width: elementSize / 6, style: {
-                position: "absolute",
-                right: elementSize / 32,
-                top: (elementSize / 32) * 2
-            }, onClick: showInfo }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/list.svg", alt: "kill log", height: elementSize / 6, width: elementSize / 6, style: {
-                position: "absolute",
-                left: elementSize / 32,
-                bottom: elementSize / 32
-            }, onClick: showLog }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: "./resources/calculator.svg", alt: "calculator", height: elementSize / 6, width: elementSize / 6, style: {
-                position: "absolute",
-                right: elementSize / 32,
-                bottom: elementSize / 32
-            }, onClick: showcalculator }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {
-                position: "absolute",
-                bottom: 0,
-                fontSize: 9,
-                color: "#D0D0D0",
-                textAlign: "center"
-            } }, randomPhrase),
-        settings.displayType === "Numbers" ? (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_numbersDisplay__WEBPACK_IMPORTED_MODULE_9__["default"], { windowSize: windowSize, state: state })) : (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_layouts_lettersDisplay__WEBPACK_IMPORTED_MODULE_8__["default"], { windowSize: windowSize, state: state }))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: showSettings }, "Settings"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: showInfo }, "Info"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: showLog }, "Log"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: showCalculator }, "Calculator")),
+        renderDisplay(),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "footer" },
+            "Better AOD \u00A9 - ",
+            randomPhrase)));
 }
-const notFound = (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "App" },
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "ALT1 not found")));
-const rootElement = document.getElementById("root");
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render(_helpers__WEBPACK_IMPORTED_MODULE_2__.alt1 ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null) : notFound, rootElement);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 })();
 
