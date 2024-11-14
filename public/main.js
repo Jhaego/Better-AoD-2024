@@ -33900,63 +33900,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./helpers.ts");
 
-/*
-Transcript
-
-English
-
-GemEnter - "You enter the competiton."
-GemStart - "The challenge gem competition has begun!"
-GemEnd - "Challenge Gem competition results:"
-GemWin - "12dragon162 won the competition with a score of 23,829!"
-GemPlacement - "You came rank 1 with a score of 23,829."
-WakeUp - "Nex:  Witness the true power of the elements. The pure power I have wrought into my will"
-KillEnd - "Completion Time: 04:13"
-PlayerDie - "Oh dear, you are dead!"
-
-Enter instance - "Welcome to your session against: Nex - Angel of Death"
-East smoke - "Nex begins to draw smoke from the east towards you!"
-North smoke - "Nex begins to draw smoke from the north towards you!"
-Pool - "Nex casts thick black smoke towards the centre of the arena."
-Bomb - "Nex has marked you to take the full force of the elements."
-
-
-German
-
-GemEnter - "Du nimmst am Wettbewerb teil."
-GemStart - "Der Rivalit  tsstein-Wettbewerb hat begonnen!"
-GemEnd - "Ergebnisse des Rivalit  tsstein-Wettbewerbs:"
-GemWin - "12dragon162 hat den Wettbewerb mit 4.447 Punkten gewonnen!"
-GemPlacement - "Du hast Rang 1 mit 4.447 Punkten erreicht."
-WakeUp - "Nex:  Werdet Zeuge der wahren Macht der Elemente. Der reinen Macht, die ich mir untertan gemacht habe."
-KillEnd - "Abschlusszeit: 01:04"
-PlayerDie - "Oje, du bist tot!"
-
-Enter instance - "Willkommen zu deiner Runde gegen: Nex - Engel des Todes"
-East smoke - "Nex zieht Rauch aus dem Osten zu dir hin!"
-North smoke - "Nex zieht Rauch aus dem Norden zu dir hin!"
-Pool - "Nex leitet dichten, schwarzen Rauch zur Mitte der Arena."
-Bomb - "Nex hat dich markiert, um die gesamte Wucht der Elemente abzubekommen."
-
-
-French
-
-GemEnter - "Vous entrez dans la competition."
-GemStart - "La competition de la gemme de defi a commence !"
-GemEnd - "Resultats de la competition de la gemme de defi :"
-GemWin - "12dragon162 mene la competition avec un score de 10 852 !"
-GemPlacement - "Vous avez atteint la 1e place avec un score de 10 852."
-WakeUp - "Nex :  Admirez la puissance ultime des elements. Le pouvoir"
-KillEnd - "Temps : 01:21"
-PlayerDie - "Oh fichtre, vous etes mort !"
-
-Enter instance - "Bienvenue dans votre session de combat contre : Nex : l'ange de la mort."
-East smoke - "Nex vous envoie de la fumee venant de l'est !"
-North smoke - "Nex se met a diriger la fumee vendant du nord vers vous !"
-Pool - "Nex lance une epaisse fumee noire vers le centre de l'arene."
-Bomb - "Nex vous prend pour cible : vous allez subir toute la puissance des elements."
-
-*/
 const confusedCharacters = [
     ["l", "i", "1"],
     ["o", "0"],
@@ -42020,7 +41963,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Original Better AoD
+// The original Better AoD
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
 // This fork of Better AoD
@@ -42041,12 +41984,9 @@ const createNewReader = () => {
     reader.readargs = {
         colors: [
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255), // Timestamp blue
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(44, 183, 20), // Completion time green OLD
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 20), // Completion time green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Practice mode orange
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(155, 48, 255), // "Nex:" purple
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153), // "Nex:" green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(225, 35, 35), // "Nex has marked you ..." OLD
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47), // "Nex has marked you ..."
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255), // Umbra purple 
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255), // Glacies blue 

@@ -25,7 +25,7 @@ import Info from "./layouts/info"
 import Log from "./layouts/log"
 import Calculator from "./layouts/calculator"
 
-// Original Better AoD
+// The original Better AoD
 // alt1://addapp/https://cgyi4.csb.app/appconfig.json
 // https://cgyi4.csb.app/
 
@@ -50,12 +50,9 @@ const createNewReader = () => {
     reader.readargs = {
         colors: [
             mixColor(127, 169, 255), // Timestamp blue
-            mixColor(44, 183, 20), // Completion time green OLD
             mixColor(45, 186, 20), // Completion time green
-            mixColor(255, 160, 0), // Practice mode orange
             mixColor(155, 48, 255), // "Nex:" purple
             mixColor(153, 255, 153), // "Nex:" green
-            mixColor(225, 35, 35), // "Nex has marked you ..." OLD
             mixColor(235, 47, 47), // "Nex has marked you ..."
             mixColor(255, 0, 255), // Umbra purple 
             mixColor(0, 255, 255), // Glacies blue 
