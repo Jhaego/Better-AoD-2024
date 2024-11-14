@@ -42040,16 +42040,18 @@ const createNewReader = () => {
     const reader = new (alt1_chatbox__WEBPACK_IMPORTED_MODULE_14___default())();
     reader.readargs = {
         colors: [
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Orange practice mode
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255), // Timestamp blue
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(44, 183, 20), // Completion time green OLD
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(45, 186, 20), // Completion time green
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47), // Nex P3 spec text NEW 16/7/24
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153), // "Nex:" green
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 160, 0), // Practice mode orange
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(155, 48, 255), // "Nex:" purple
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(153, 255, 153), // "Nex:" green
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(225, 35, 35), // "Nex has marked you ..." OLD
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(235, 47, 47), // "Nex has marked you ..."
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 255), // Umbra purple 
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(0, 255, 255), // Glacies blue 
             (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 0, 0), // Cruor red
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255), // Fumus white
-            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(127, 169, 255) // Clock blue
+            (0,alt1_base__WEBPACK_IMPORTED_MODULE_15__.mixColor)(255, 255, 255) // Fumus white
         ]
     };
     return reader;

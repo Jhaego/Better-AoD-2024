@@ -2,7 +2,7 @@
 
 This is me playing around with the [original Better AoD](https://runeapps.org/forums/viewtopic.php?id=1324) Alt1 plugin by JamieS1211. 
 
-Compared to the original, this version properly tracks number of kills and average kill time.
+Compared to the original, this version *should* track number of kills and average kill time. Hopefully with time I can add additional features.
 
 ## Installation
 
@@ -17,7 +17,7 @@ Ensure the in-game Interface Scaling is set to 100%. Disable Interface Transpare
 
 *Having issues detecting things?*
 
-This plugin requires you to have gamechat in either the "on" or "filtered" settings and the chatbox to be scrolled completely to the bottom. The plugin also reads each line separately so issues may occur if your chat box is so small that certain messages that are scanned for split on multiple lines, i.e. **try making your chatbox wider**. Please ensure your **font size is 12 or larger** (14 is best) as font 10 has significant detection issues.
+This plugin requires you to have gamechat in either the "on" or "filtered" settings and the chatbox to be scrolled completely to the bottom. The plugin also reads each line separately so issues may occur if your chat box is so small that certain messages that are scanned for split on multiple lines, i.e. *try making your chatbox wider*. Please ensure your *font size is 12 or larger* (14 is best) as font 10 has significant detection issues.
 
 *Double reading things?*
 

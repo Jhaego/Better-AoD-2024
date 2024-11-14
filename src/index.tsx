@@ -49,16 +49,18 @@ const createNewReader = () => {
 
     reader.readargs = {
         colors: [
-            mixColor(255, 160, 0), // Orange practice mode
+            mixColor(127, 169, 255), // Timestamp blue
+            mixColor(44, 183, 20), // Completion time green OLD
             mixColor(45, 186, 20), // Completion time green
-            mixColor(235, 47, 47), // Nex P3 spec text NEW 16/7/24
-            mixColor(153, 255, 153), // "Nex:" green
+            mixColor(255, 160, 0), // Practice mode orange
             mixColor(155, 48, 255), // "Nex:" purple
+            mixColor(153, 255, 153), // "Nex:" green
+            mixColor(225, 35, 35), // "Nex has marked you ..." OLD
+            mixColor(235, 47, 47), // "Nex has marked you ..."
             mixColor(255, 0, 255), // Umbra purple 
             mixColor(0, 255, 255), // Glacies blue 
             mixColor(255, 0, 0), // Cruor red
-            mixColor(255, 255, 255), // Fumus white
-            mixColor(127, 169, 255) // Clock blue
+            mixColor(255, 255, 255) // Fumus white
         ]
     }
 
