@@ -1,8 +1,14 @@
+# Disclaimer 22-11-2025: unsupported
+
+I assume my version no longer works (I am unable to ascertain this as I do not currently play the game). 
+
+If these files are somehow useful to anyone, feel free to use them as you like :-)
+
 # Better AoD 2024
 
 This is me playing around with the [original Better AoD](https://runeapps.org/forums/viewtopic.php?id=1324) Alt1 plugin by JamieS1211. 
 
-Compared to the original, this version *should* track number of kills and average kill time. Hopefully with time I can add additional features.
+Compared to the original, this version *should* properly track number of kills and average kill time.
 
 ## Installation
 
